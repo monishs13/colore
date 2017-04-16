@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>COLORE</title>
+  <meta name="author" content="Jake Rocheleau">
+
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+</head>
+
+<body>
+
+
+  <div id="w">
+    <div id="content">
+      <nav id="stickynav">
+        <ul id="nav" class="clearfix">
+          <li><a href="http://localhost:3000/">HOME</a></li>
+          <li><a href="artistWords.html">ARTIST'S WORDS</a></li>
+          <li><a href="gallery2.html">GALLERY</a></li>
+          <li><a href="login.html">SIGNIN/UP</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="know.html">KNOW ARTIST</a></li>
+          <li onclick="out()">LOGOUT</li>
+        </ul>
+      </nav>
+
+      <div class="navin2">
+
+          <div id="pageName3" style="position: relative;left:45%; top:10px">
+          <p style="color:#E74C3C; font-size: 20px">CONTACT US</p>
+        </div>
+
+          <div class="form2" style="left:30%; position:relative; top:10%; margin-top: 10px; " id="form2">
+          <form method="POST" action="form2.php">
+            <label style="font-size: 13px">NAME</label><br/>
+            <input type="text" name="name" style="padding: 5px; margin: 5px 0"><br/>
+            <label style="font-size: 13px">EMAIL ID</label><br/>
+            <input type="email" name="eid" style="padding: 5px; margin: 5px 0"><br/><br/>
+            <textarea rows="4" cols="50" style="margin-left:1%; margin-top: 3px;" placeholder="leave your comments here"></textarea><br/>
+            <input type="submit" name="sub" style="padding: 8px 8px; margin-top:10px;">
+            <input type="reset" name="res" style="padding: 8px 8px; margin-top:10px;">
+          </form>
+          </div>
+          <br><br>
+          <hr style="color:#BDC3C7; width:90%; opacity: 0.5 ">
+        <div style="position: relative;min-height: 340px;	width: 100%; overflow: hidden; clear: both; ">
+
+            <!--<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:340px;width:500px; display: inline-block;'><div id='gmap_canvas' style='height:440px;width:700px;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small><a href="https://privacypolicytemplate.net">privacy policy example</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:13,center:new google.maps.LatLng(12.92371440000002,77.5495640144043),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(12.92371440000002,77.5495640144043)});infowindow = new google.maps.InfoWindow({content:'<strong>Awake Viswa Seva</strong><br>21, 4th Cross Rd, Ittamadu, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+          -->
+
+
+
+          <div id="map" style="float:left; display: inline-block;  width: 100px; height: 100px; position: relative; left: 0%; height: 340px; width: 600px; margin-right: 10px; padding: 10px;">
+
+            <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ0zaNjUY-rjsRzwpkrPZ0TWk&key=AIzaSyA_Fro6qNtPhq7vrMimPs9Uo-3rl2fP_PM" allowfullscreen></iframe>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- @end #content -->
+  </div><!-- @end #w -->
+
+<script>
+  function out(){
+    sessionStorage.token = "undefined";
+    sessionStorage.name = "undefined";
+    window.location = "http://localhost:3000/";
+  }
+</script>
+</body>
+</html>
