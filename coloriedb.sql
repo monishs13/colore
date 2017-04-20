@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2017 at 02:09 PM
+-- Generation Time: Apr 20, 2017 at 06:20 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -31,24 +31,6 @@ CREATE TABLE `broadcast` (
   `message` varchar(100) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `broadcast`
---
-
-INSERT INTO `broadcast` (`ID`, `message`, `timestamp`) VALUES
-(20, 'daskjdhaslkmd', '2017-04-13 20:55:44'),
-(21, 'asiudhwl', '2017-04-13 20:55:50'),
-(22, 'soiadjs', '2017-04-13 20:55:56'),
-(23, 'yoooooo', '2017-04-14 03:46:46'),
-(24, 'yoooooo', '2017-04-14 03:47:07'),
-(25, 'yoooooo', '2017-04-14 03:47:09'),
-(26, 'yoooooo', '2017-04-14 03:48:37'),
-(27, 'hello', '2017-04-14 06:43:11'),
-(28, 'how are you?', '2017-04-14 06:43:23'),
-(29, 'good morninggggg', '2017-04-15 03:38:16'),
-(30, 'webtech 2', '2017-04-15 05:20:31'),
-(31, 'hello', '2017-04-20 03:51:16');
 
 -- --------------------------------------------------------
 
@@ -80,7 +62,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userId`, `email`, `password`) VALUES
 (1, 'monishs20@gmail.com', 'monish'),
-(2, 'hello@hello.com', 'hello');
+(2, 'hello@hello.com', 'hello'),
+(3, 'rahul@gmail.com', 'rahul');
 
 --
 -- Indexes for dumped tables
@@ -112,7 +95,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `broadcast`
 --
 ALTER TABLE `broadcast`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `searchcontent`
 --
@@ -122,7 +105,7 @@ ALTER TABLE `searchcontent`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

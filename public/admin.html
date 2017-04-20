@@ -3,9 +3,11 @@
     <h4>WHAT DO YOU WANNA TELL YOUR PEEPS? </h4>
     <input type="text" id="msg"/><br/><br/>
     <input type="button" id="btn"/ value="broadcast!" onclick="send()">
+    <a href="http://localhost:3000/"><h4>GO TO HOME</h4></a>
     <script src="jquery/jquery.min.js"></script>
     <script>
       console.log(sessionStorage.name);
+      console.log(sessionStorage.token);
       function send(){
       //  $.get('/broadcast', {message : document.getElementById("msg").value});
       var message = document.getElementById("msg").value;
@@ -23,9 +25,13 @@
         success : function(data) {
           console.log(data);
         },
-        error : function(){alert("you are not authorized");}
+        error : function(xhr){
+          if(xhr.status!=200) window.alert("you are not authorized");
+        }
       });
-      }
+
+
+  }
     </script>
   </body>
 </html>

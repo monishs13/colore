@@ -140,6 +140,7 @@ app.get('/notif', function(req, res){
 
 app.get('/broadcast',ejwt({secret : secret}),  function(req, res){
 //  console.log(req.query.message);
+  if(req.user.username!='monishs20@gmail.com') res.sendStatus(401);
   database.broadcast(req.query.message, function(status){
     if(status==200)
     {
