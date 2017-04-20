@@ -53,7 +53,31 @@ app.post('/login', function(req, res){
 });
 
 app.get('/gallery', function(req, res){
-  res.sendFile('/gallery2.html');
+  res.sendFile(__dirname + '/public/gallery2.html');
+});
+
+app.get('/admin', function(req, res){
+  res.sendFile(__dirname + '/public/admin.html');
+});
+
+app.get('/knowArtist', function(req, res){
+  res.sendFile(__dirname + '/public/know.html');
+});
+
+app.get('/signin', function(req, res){
+  res.sendFile(__dirname + '/public/login.html');
+});
+
+app.get('/artistWords', function(req, res){
+  res.sendFile(__dirname + '/public/artistWords.html');
+});
+
+app.get('/contact', function(req, res){
+  res.sendFile(__dirname + '/public/contact.html');
+});
+
+app.get('/knowArtist', function(req, res){
+  res.sendFile(__dirname + '/public/know.html');
 });
 
 app.post('/signup', function(req, res){
@@ -114,7 +138,7 @@ app.get('/notif', function(req, res){
 //  res.end();
 });
 
-app.get('/broadcast', function(req, res){
+app.get('/broadcast',ejwt({secret : secret}),  function(req, res){
 //  console.log(req.query.message);
   database.broadcast(req.query.message, function(status){
     if(status==200)

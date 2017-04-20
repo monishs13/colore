@@ -53,22 +53,28 @@
                         <a class="page-scroll" href="#about" style="color:black">ABOUT</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="artistWords.html" style="color:black">ARTIST'S WORDS</a>
+                        <a class="page-scroll" href="http://localhost:3000/artistWords" style="color:black">ARTIST'S WORDS</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="gallery2.html" style="color:black">GALLERY</a>
+                        <a class="page-scroll" href="http://localhost:3000/gallery" style="color:black">GALLERY</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="login.html" style="color:black">SIGN IN/UP</a>
+                        <a class="page-scroll" href="http://localhost:3000/signin" style="color:black">SIGN IN/UP</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="contact.html" style="color:black">CONTACT</a>
+                        <a class="page-scroll" href="http://localhost:3000/contact" style="color:black">CONTACT</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="know.html" style="color:black">KNOW ARTIST</a>
+                        <a class="page-scroll" href="http://localhost:3000/knowArtist" style="color:black">KNOW ARTIST</a>
                     </li>
                     <li onclick="out()">
                         <a class="page-scroll" href="#" style="color:black">logout</a>
+                    </li>
+                    <li onclick="checkAdmin()" >
+                        <a  class="page-scroll" style="color:black" >ADMIN LOGIN</a>
+                    </li>
+                    <li id="inlog">
+                        <a  class="page-scroll" style="color:black" >LOGGED IN</a>
                     </li>
 
                 </ul>
@@ -300,6 +306,9 @@
     <script>
     var source;
       function init(){
+
+        if(sessionStorage.token=='undefined') document.getElementById("inlog").style.display = "none";
+
         $.get('http://localhost:3000/notific', function(data){
             console.log("in init");
             console.log(data.length);
@@ -344,6 +353,24 @@
         sessionStorage.token = "undefined";
         sessionStorage.name = "undefined";
         window.location = "http://localhost:3000/";
+      }
+
+      function checkAdmin(){
+        console.log('admin name is ' + sessionStorage.name);
+      if(sessionStorage.token!='undefined'){
+        if(sessionStorage.name=='monishs20@gmail.com'){
+          //  window.alert('admin logged in');
+          window.location = 'http://localhost:3000/admin'
+
+      }
+        else {
+          window.alert('you are not the admin');
+        }
+    }
+      else {
+        window.alert("please login first");
+        console.log("not in if cond");
+      }
       }
 
 

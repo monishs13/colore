@@ -5,8 +5,26 @@
     <input type="button" id="btn"/ value="broadcast!" onclick="send()">
     <script src="jquery/jquery.min.js"></script>
     <script>
+      console.log(sessionStorage.name);
       function send(){
-        $.get('/broadcast', {message : document.getElementById("msg").value});
+      //  $.get('/broadcast', {message : document.getElementById("msg").value});
+      var message = document.getElementById("msg").value;
+
+      $.ajax({
+        url : "/broadcast",
+        type : 'get',
+        data : {
+          "message" : message
+        },
+        headers : {
+          "Authorization" : "Bearer " + sessionStorage.token
+        },
+        dataType : 'json',
+        success : function(data) {
+          console.log(data);
+        },
+        error : function(){alert("you are not authorized");}
+      });
       }
     </script>
   </body>
